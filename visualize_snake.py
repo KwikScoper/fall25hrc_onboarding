@@ -20,7 +20,7 @@ def view_floor():
     while True:
         mj.mj_step(model, data)
         print(data.qpos)
-        data.ctrl = 10 * np.sin(t + np.array([0.0, 0.1, 0.2, 0.3]))
+        #data.ctrl = 10 * np.sin(t + np.array([0.0, 0.1, 0.2, 0.3]))
         t += dt
         time.sleep(dt)
         viewer2.sync()

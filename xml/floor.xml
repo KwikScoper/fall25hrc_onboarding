@@ -1,5 +1,5 @@
 <mujoco model="snake_scene">
-  <include file="snake.xml"/>
+  <include file="robotdog.xml"/>
 
   <statistic center="1 -0.8 1.1" extent=".3"/>
 

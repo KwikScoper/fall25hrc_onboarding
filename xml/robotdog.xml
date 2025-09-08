@@ -1,0 +1,101 @@
+<mujoco model="robotdog">
+  <compiler angle="degree"/>
+  <option timestep="0.001" gravity="0 0 -9.81"/>
+  
+
+  <default>
+    <equality solref="0.005 1" />
+    <geom type="box" size="0.05 0.02 0.02" density="500" rgba="0.2 0.7 0.2 1"/>
+    <joint limited="true" range="-300 300" damping="0.2" stiffness="5"/>
+    <motor ctrllimited="true" ctrlrange="-3 3"/>
+  </default>
+
+
+  <worldbody>
+    <!main body (root)>
+    <body name="mainbody" pos="0 0 0.22">
+      <freejoint name="root_free"/>
+      <geom name="mainbody_geom" type="box" size=".03 .20 .03" pos="0 0 0"/>
+
+      <body name="toplegFL" pos="-0.05 0.20 -0.03">
+        <joint name="jtopFL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02"/>
+        <geom name="toplegFL_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
+
+          <body name="midlegFL" pos="-0.03 0 -0.05">
+            <joint name="jmidFL_pitch" type="hinge" axis="1 0 0" pos="0 0.01 0.05"/>
+            <geom name="midFL_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+              <body name="botlegFL" pos="0.02 0 -0.10">
+                <joint name="jbotFL_pitch" type="hinge" axis="1 0 0" pos="0 0 0.05"/>
+                <geom name="botFL_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+                  <body name="footFL" pos="0 0 -.05">
+                    <geom name="footFL_geom" type="sphere" size="0.02"/>
+                  </body>
+              </body>
+          </body>
+      </body>
+
+      <body name="toplegBL" pos="-0.05 -0.20 -0.03">
+        <joint name="jtopBL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02"/>
+        <geom name="toplegBL_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
+
+          <body name="midlegBL" pos="-0.03 0 -0.05">
+            <joint name="jmidBL_pitch" type="hinge" axis="1 0 0" pos="0 0.01 0.05"/>
+            <geom name="midBL_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+              <body name="botlegBL" pos="0.02 0 -0.10">
+                <joint name="jbotBL_pitch" type="hinge" axis="1 0 0" pos="0 0 0.05"/>
+                <geom name="botBL_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+                  <body name="footBL" pos="0 0 -.05">
+                    <geom name="footBL_geom" type="sphere" size="0.02"/>
+                  </body>
+              </body>
+          </body>
+      </body>
+
+      <body name="toplegFR" pos="0.05 0.20 -0.03">
+        <joint name="jtopFR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02"/>
+        <geom name="toplegFR_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
+
+          <body name="midlegFR" pos="0.03 0 -0.05">
+            <joint name="jmidFR_pitch" type="hinge" axis="1 0 0" pos="0 0.01 0.05"/>
+            <geom name="midFR_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+              <body name="botlegFR" pos="-0.02 0 -0.10">
+                <joint name="jbotFR_pitch" type="hinge" axis="1 0 0" pos="0 0 0.05"/>
+                <geom name="botFR_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+                  <body name="footFR" pos="0 0 -.05">
+                    <geom name="footFR_geom" type="sphere" size="0.02"/>
+                  </body>
+              </body>
+          </body>
+      </body>
+
+      <body name="toplegBR" pos="0.05 -0.20 -0.03">
+        <joint name="jtopBR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02"/>
+        <geom name="toplegBR_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
+
+          <body name="midlegBR" pos="0.03 0 -0.05">
+            <joint name="jmidBR_pitch" type="hinge" axis="1 0 0" pos="0 0.01 0.05"/>
+            <geom name="midBR_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+              <body name="botlegBR" pos="-0.02 0 -0.10">
+                <joint name="jbotBR_pitch" type="hinge" axis="1 0 0" pos="0 0 0.05"/>
+                <geom name="botBR_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
+
+                  <body name="footBR" pos="0 0 -.05">
+                    <geom name="footBR_geom" type="sphere" size="0.02"/>
+                  </body>
+              </body>
+          </body>
+      </body>
+
+    </body>
+  </worldbody>
+
+</mujoco>
+
+
