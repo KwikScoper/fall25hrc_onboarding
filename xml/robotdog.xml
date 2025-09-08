@@ -16,7 +16,8 @@
     <body name="mainbody" pos="0 0 0.22">
       <freejoint name="root_free"/>
       <geom name="mainbody_geom" type="box" size=".03 .20 .03" pos="0 0 0"/>
-
+      
+      <!--FRONT LEFT LEG-->
       <body name="toplegFL" pos="-0.05 0.20 -0.03">
         <joint name="jtopFL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02"/>
         <geom name="toplegFL_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
@@ -35,7 +36,8 @@
               </body>
           </body>
       </body>
-
+      
+      <!--BACK LEFT LEG-->
       <body name="toplegBL" pos="-0.05 -0.20 -0.03">
         <joint name="jtopBL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02"/>
         <geom name="toplegBL_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
@@ -55,6 +57,7 @@
           </body>
       </body>
 
+      <!--FRONT RIGHT LEG-->
       <body name="toplegFR" pos="0.05 0.20 -0.03">
         <joint name="jtopFR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02"/>
         <geom name="toplegFR_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
@@ -74,6 +77,7 @@
           </body>
       </body>
 
+      <!--BACK RIGHT LEG-->
       <body name="toplegBR" pos="0.05 -0.20 -0.03">
         <joint name="jtopBR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02"/>
         <geom name="toplegBR_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
@@ -95,6 +99,40 @@
 
     </body>
   </worldbody>
+
+  <actuator>
+    <motor name="mFL_roll" joint="jtopFL_roll"/>
+    <motor name="mBL_roll" joint="jtopBL_roll"/>
+    <motor name="mFR_roll" joint="jtopFR_roll"/>
+    <motor name="mBR_roll" joint="jtopBR_roll"/>
+
+    <motor name="mBL_toppitch" joint="jmidFL_pitch"/>
+    <motor name="mFR_toppitch" joint="jmidBL_pitch"/>
+    <motor name="mFL_toppitch" joint="jmidFR_pitch"/>
+    <motor name="mBR_toppitch" joint="jmidBR_pitch"/>
+
+    <motor name="mFL_botpitch" joint="jbotFL_pitch"/>
+    <motor name="mBL_botpitch" joint="jbotBL_pitch"/>
+    <motor name="mFR_botpitch" joint="jbotFR_pitch"/>
+    <motor name="mBR_botpitch" joint="jbotBR_pitch"/>
+  </actuator>
+
+  <sensor>
+    <jointpos joint="jtopFL_roll"/>
+    <jointpos joint="jtopBL_roll"/>
+    <jointpos joint="jtopFR_roll"/>
+    <jointpos joint="jtopBR_roll"/>
+
+    <jointpos joint="jmidFL_pitch"/>
+    <jointpos joint="jmidBL_pitch"/>
+    <jointpos joint="jmidFR_pitch"/>
+    <jointpos joint="jmidBR_pitch"/>
+
+    <jointpos joint="jbotFL_pitch"/>
+    <jointpos joint="jbotBR_pitch"/>
+    <jointpos joint="jbotBL_pitch"/>
+    <jointpos joint="jbotFR_pitch"/>
+  </sensor>
 
 </mujoco>
 
