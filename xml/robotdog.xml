@@ -7,19 +7,19 @@
     <equality solref="0.005 1" />
     <geom type="box" size="0.05 0.02 0.02" density="500" rgba="0.2 0.7 0.2 1"/>
     <joint limited="true" range="-300 300" damping="0.2" stiffness="5"/>
-    <motor ctrllimited="true" ctrlrange="-3 3"/>
+    <motor ctrllimited="true" ctrlrange="-20 20"/>
   </default>
 
 
   <worldbody>
     <!main body (root)>
-    <body name="mainbody" pos="0 0 0.22">
+    <body name="mainbody" pos="0 0 0.25">
       <freejoint name="root_free"/>
       <geom name="mainbody_geom" type="box" size=".03 .20 .03" pos="0 0 0"/>
       
       <!--FRONT LEFT LEG-->
       <body name="toplegFL" pos="-0.05 0.20 -0.03">
-        <joint name="jtopFL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02"/>
+        <joint name="jtopFL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02" stiffness="1e8" damping="1e8"/>
         <geom name="toplegFL_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
 
           <body name="midlegFL" pos="-0.03 0 -0.05">
@@ -39,7 +39,7 @@
       
       <!--BACK LEFT LEG-->
       <body name="toplegBL" pos="-0.05 -0.20 -0.03">
-        <joint name="jtopBL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02"/>
+        <joint name="jtopBL_roll" type="hinge" axis="0 1 0" pos="0.02 0 -0.02" stiffness="1e8" damping="1e8"/>
         <geom name="toplegBL_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
 
           <body name="midlegBL" pos="-0.03 0 -0.05">
@@ -59,7 +59,7 @@
 
       <!--FRONT RIGHT LEG-->
       <body name="toplegFR" pos="0.05 0.20 -0.03">
-        <joint name="jtopFR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02"/>
+        <joint name="jtopFR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02" stiffness="1e8" damping="1e8"/>
         <geom name="toplegFR_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
 
           <body name="midlegFR" pos="0.03 0 -0.05">
@@ -79,7 +79,7 @@
 
       <!--BACK RIGHT LEG-->
       <body name="toplegBR" pos="0.05 -0.20 -0.03">
-        <joint name="jtopBR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02"/>
+        <joint name="jtopBR_roll" type="hinge" axis="0 1 0" pos="-0.02 0 -0.02" stiffness="1e8" damping="1e8"/>
         <geom name="toplegBR_geom" type="box" size="0.02 0.05 0.02" pos="0 0 0"/>
 
           <body name="midlegBR" pos="0.03 0 -0.05">
@@ -106,9 +106,9 @@
     <motor name="mFR_roll" joint="jtopFR_roll"/>
     <motor name="mBR_roll" joint="jtopBR_roll"/>
 
-    <motor name="mBL_toppitch" joint="jmidFL_pitch"/>
-    <motor name="mFR_toppitch" joint="jmidBL_pitch"/>
-    <motor name="mFL_toppitch" joint="jmidFR_pitch"/>
+    <motor name="mFL_toppitch" joint="jmidFL_pitch"/>
+    <motor name="mBL_toppitch" joint="jmidBL_pitch"/>
+    <motor name="mFR_toppitch" joint="jmidFR_pitch"/>
     <motor name="mBR_toppitch" joint="jmidBR_pitch"/>
 
     <motor name="mFL_botpitch" joint="jbotFL_pitch"/>
@@ -129,9 +129,9 @@
     <jointpos joint="jmidBR_pitch"/>
 
     <jointpos joint="jbotFL_pitch"/>
-    <jointpos joint="jbotBR_pitch"/>
     <jointpos joint="jbotBL_pitch"/>
     <jointpos joint="jbotFR_pitch"/>
+    <jointpos joint="jbotBR_pitch"/>
   </sensor>
 
 </mujoco>
