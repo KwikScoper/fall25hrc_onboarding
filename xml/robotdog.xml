@@ -31,7 +31,7 @@
                 <geom name="botFL_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
 
                   <body name="footFL" pos="0 0 -.05">
-                    <geom name="footFL_geom" type="sphere" size="0.02"/>
+                    <geom name="footFL_geom" type="sphere" size="0.02" friction="1 1 1"/>
                   </body>
               </body>
           </body>
@@ -51,7 +51,7 @@
                 <geom name="botBL_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
 
                   <body name="footBL" pos="0 0 -.05">
-                    <geom name="footBL_geom" type="sphere" size="0.02"/>
+                    <geom name="footBL_geom" type="sphere" size="0.02" friction="1 1 1"/>
                   </body>
               </body>
           </body>
@@ -71,7 +71,7 @@
                 <geom name="botFR_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
 
                   <body name="footFR" pos="0 0 -.05">
-                    <geom name="footFR_geom" type="sphere" size="0.02"/>
+                    <geom name="footFR_geom" type="sphere" size="0.02" friction="1 1 1"/>
                   </body>
               </body>
           </body>
@@ -91,7 +91,7 @@
                 <geom name="botBR_geom" type="box" size="0.01 0.01 0.05" pos="0 0 0"/>
 
                   <body name="footBR" pos="0 0 -.05">
-                    <geom name="footBR_geom" type="sphere" size="0.02"/>
+                    <geom name="footBR_geom" type="sphere" size="0.02" friction="1 1 1"/>
                   </body>
               </body>
           </body>
